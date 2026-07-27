@@ -16,7 +16,7 @@ The crate is released independently. Products consume the tag, never another
 product's source tree:
 
 ```toml
-false-agent-protocol = { version = "0.1.1", git = "ssh://git@github.com/false-systems/false-agent-protocol.git", tag = "v0.1.1" }
+false-agent-protocol = { version = "0.1.1", git = "https://github.com/false-systems/false-agent-protocol.git", tag = "v0.1.1" }
 ```
 
 ```bash
