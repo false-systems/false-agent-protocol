@@ -45,7 +45,9 @@ fn canonicalize(value: &mut Value) {
         Value::Array(items) => items.iter_mut().for_each(canonicalize),
         Value::Object(object) => {
             let mut sorted = Map::new();
-            for (key, mut value) in std::mem::take(object) {
+            let mut entries = std::mem::take(object).into_iter().collect::<Vec<_>>();
+            entries.sort_by(|left, right| left.0.cmp(&right.0));
+            for (key, mut value) in entries {
                 canonicalize(&mut value);
                 sorted.insert(key, value);
             }
