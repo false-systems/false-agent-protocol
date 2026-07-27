@@ -1,0 +1,35 @@
+{
+  "protocol": { "major": 1, "minor": 0 },
+  "run": "run_fixture",
+  "binding": {
+    "run": "run_fixture",
+    "work": "work_shared-semantic-v0",
+    "spec": "spec_shared-semantic-v0",
+    "origin": "rpoint_fixture-a",
+    "context_digest": "sha256:context"
+  },
+  "origin": "rpoint_fixture-a",
+  "destination": "rpoint_fixture-b",
+  "actions": [
+    {
+      "id": "act_write-1",
+      "kind": "apply_patch",
+      "tool_call": "tool_call-1",
+      "transforms_from": "rpoint_fixture-a",
+      "transforms_to": "rpoint_fixture-b",
+      "evidence": ["ev_write-1"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_write-1",
+      "digest": "sha256:evidence",
+      "supports": ["obl_regression"]
+    }
+  ],
+  "claimed_completion": "validated",
+  "unresolved_blockers": [],
+  "transcript_ref": ".toimija/runs/run_fixture.jsonl",
+  "result_digest": "sha256:861bc98b92669fd807d8da6acf3868cfd91cd496a420a1df367d6f13e77e947c",
+  "extensions": {}
+}

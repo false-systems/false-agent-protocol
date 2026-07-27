@@ -1,0 +1,38 @@
+{
+  "protocol": { "major": 1, "minor": 0 },
+  "spec": {
+    "id": "spec_shared-semantic-v0",
+      "title": "Shared semantic contract v0",
+      "objective": "Connect product-owned facts through typed references.",
+      "goals": ["A regression test proves the flow."],
+      "non_goals": ["graph storage"],
+    "source_revision": "9df4a74"
+  },
+  "work": {
+    "id": "work_shared-semantic-v0",
+    "spec": "spec_shared-semantic-v0",
+    "objective": "Ship one vertical semantic-contract slice."
+  },
+  "scope": { "write": ["src", "tests"] },
+  "obligations": [
+    {
+      "id": "obl_regression",
+      "description": "A regression test proves the flow.",
+      "kind": "manual"
+    },
+    {
+      "id": "obl_gate-test",
+      "description": "The approved test gate passes.",
+      "kind": "gate"
+    }
+  ],
+  "gates": [
+    {
+      "id": "gate_test",
+      "obligation": "obl_gate-test",
+      "command": "cargo test"
+    }
+  ],
+  "required_completion": "validated",
+  "extensions": {}
+}

@@ -1,0 +1,27 @@
+{
+  "program": "kisko",
+  "args": [],
+  "env": [
+    {
+      "key": "FALSE_SYSTEMS_CONTEXT_PATH",
+      "value": "/session/context.json"
+    },
+    {
+      "key": "FALSE_SYSTEMS_RESULT_PATH",
+      "value": "/session/result.json"
+    }
+  ],
+  "cwd": "/fixture",
+  "stdin_mode": "inherit",
+  "terminal_mode": "pty",
+  "context_artifacts": [
+    {
+      "path": "/session/context.json",
+      "retention": "ephemeral"
+    }
+  ],
+  "result_contract": {
+    "path": "/session/result.json",
+    "structured": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "host": {
+    "name": "toimija",
+    "version": "0.1.1"
+  },
+  "protocol": {
+    "minimum": { "major": 1, "minor": 0 },
+    "maximum": { "major": 1, "minor": 0 }
+  },
+  "requested_capabilities": ["work.v1"],
+  "repository": {
+    "id": "repo_fixture",
+    "root_hint": "/fixture"
+  }
+}

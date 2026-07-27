@@ -1,0 +1,20 @@
+{
+  "protocol": { "major": 1, "minor": 0 },
+  "generation": 1,
+  "generated_at": "2026-07-27T12:00:00Z",
+  "repository": {
+    "id": "rpoint_fixture-a",
+    "repository": "repo_fixture",
+    "consistency_token": "sha256:context-a",
+    "tree_oid": "1111111111111111111111111111111111111111",
+    "branch": "main",
+    "dirty": false,
+    "captured_at": "2026-07-27T12:00:00Z"
+  },
+  "changed_surfaces": [],
+  "repository_capabilities": {
+    "reachable_completion": ["changed", "validated"]
+  },
+  "context_digest": "sha256:2b098431362082a669d907b56620e40738c41a5ad48a7b3ca4691770ff59ab94",
+  "extensions": {}
+}

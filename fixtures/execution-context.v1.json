@@ -1,0 +1,79 @@
+{
+  "protocol": { "major": 1, "minor": 0 },
+  "generated_at": "2026-07-27T12:00:00Z",
+  "generation": 1,
+  "work": {
+    "protocol": { "major": 1, "minor": 0 },
+    "spec": {
+      "id": "spec_shared-semantic-v0",
+      "title": "Shared semantic contract v0",
+      "objective": "Connect product-owned facts through typed references.",
+      "goals": ["A regression test proves the flow."],
+      "non_goals": ["graph storage"],
+      "source_revision": "9df4a74"
+    },
+    "work": {
+      "id": "work_shared-semantic-v0",
+      "spec": "spec_shared-semantic-v0",
+      "objective": "Ship one vertical semantic-contract slice."
+    },
+    "scope": { "write": ["src", "tests"] },
+    "obligations": [
+      {
+        "id": "obl_regression",
+        "description": "A regression test proves the flow.",
+        "kind": "manual"
+      },
+      {
+        "id": "obl_gate-test",
+        "description": "The approved test gate passes.",
+        "kind": "gate"
+      }
+    ],
+    "gates": [
+      {
+        "id": "gate_test",
+        "obligation": "obl_gate-test",
+        "command": "cargo test"
+      }
+    ],
+    "required_completion": "validated",
+    "extensions": {}
+  },
+  "repository": {
+    "id": "rpoint_fixture-a",
+    "repository": "repo_fixture",
+    "consistency_token": "sha256:context-a",
+    "tree_oid": "1111111111111111111111111111111111111111",
+    "branch": "main",
+    "dirty": false,
+    "captured_at": "2026-07-27T12:00:00Z"
+  },
+  "changed_paths": [],
+  "workflow_status": {
+    "obligations": [
+      {
+        "obligation": "obl_regression",
+        "supported": false,
+        "evidence": []
+      },
+      {
+        "obligation": "obl_gate-test",
+        "supported": false,
+        "evidence": []
+      }
+    ],
+    "blockers": [
+      {
+        "code": "obligation-regression",
+        "message": "Regression evidence is missing."
+      }
+    ],
+    "closable": false
+  },
+  "capabilities": {
+    "reachable_completion": ["changed", "validated"]
+  },
+  "context_digest": "sha256:75477ab99e045d162b7fb1aeb9c8bdc49029dfcff74345007ab6e6022a2b11b8",
+  "extensions": {}
+}
