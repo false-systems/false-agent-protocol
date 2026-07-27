@@ -12,6 +12,13 @@ Protocol `1.0` provides strict `Content-Length` framing, JSON-RPC envelopes,
 fixtures. It performs no storage, Git inspection, process execution, provider
 calls, or product behaviour.
 
+The crate is released independently. Products consume the tag, never another
+product's source tree:
+
+```toml
+false-agent-protocol = { version = "0.1.1", git = "ssh://git@github.com/false-systems/false-agent-protocol.git", tag = "v0.1.1" }
+```
+
 ```bash
 cargo build
 cargo test
