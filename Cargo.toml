@@ -1,6 +1,6 @@
 [package]
 name = "false-agent-protocol"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 license = "MIT"
 description = "Versioned runtime contracts shared by False Systems products"
