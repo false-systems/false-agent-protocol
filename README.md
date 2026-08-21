@@ -5,7 +5,8 @@ built False Systems products:
 
 - Teko owns specifications, work, obligations, gates, receipts, and closure.
 - Toimija owns current repository points and repository capabilities.
-- Kisko owns worker runs, actions, tool outcomes, transcripts, and run evidence.
+- A `worker.v1` producer owns its runs, actions, tool outcomes, transcripts,
+  and run evidence; the protocol does not choose that producer.
 
 Protocol `1.0` provides strict `Content-Length` framing, JSON-RPC envelopes,
 `work.v1`, `worker.v1`, typed references, canonical digests, and compatibility
