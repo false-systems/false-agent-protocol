@@ -121,6 +121,7 @@ pub enum Relation {
 pub enum Product {
     Teko,
     Toimija,
+    Worker,
     Kisko,
     Sauma,
 }
@@ -184,7 +185,7 @@ pub fn validate_fact(fact: &SemanticFact) -> Result<(), SemanticError> {
 }
 
 fn validate_fact_source(fact: &SemanticFact) -> Result<(), SemanticError> {
-    use Product::{Kisko, Sauma, Teko, Toimija};
+    use Product::{Kisko, Sauma, Teko, Toimija, Worker};
     use Relation::*;
     let allowed = match fact.source.product {
         Teko => matches!(
@@ -195,7 +196,7 @@ fn validate_fact_source(fact: &SemanticFact) -> Result<(), SemanticError> {
             fact.relation,
             BoundTo | TransformsFrom | TransformsTo | Invalidates
         ),
-        Kisko => matches!(
+        Worker | Kisko => matches!(
             fact.relation,
             Executes
                 | BoundTo
@@ -346,6 +347,17 @@ mod tests {
             SemanticProjection::derive([item]),
             Err(SemanticError::ConflictingAuthority { .. })
         ));
+    }
+
+    #[test]
+    fn neutral_workers_may_author_worker_facts() {
+        let mut item = fact(
+            EntityRef::WorkerRun("run_01".parse().unwrap()),
+            Relation::Executes,
+            EntityRef::Work("work_01".parse().unwrap()),
+        );
+        item.source.product = Product::Worker;
+        assert!(SemanticProjection::derive([item]).is_ok());
     }
 
     #[test]
