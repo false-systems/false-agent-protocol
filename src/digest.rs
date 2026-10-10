@@ -44,8 +44,8 @@ pub fn sha256_without(value: &impl Serialize, field: &str) -> Result<String, Pro
 ///
 /// An allowlist, deliberately — not "the receipt minus `id` and
 /// `receipt_digest`". A denylist silently folds in any field a producer later
-/// adds, and that is not hypothetical: when Toimija attached a sauma envelope
-/// to receipts, every consumer recomputing by exclusion started disagreeing
+/// adds, and that is not hypothetical: when a producer attached a verifier's
+/// envelope to receipts, every consumer recomputing by exclusion started disagreeing
 /// with the producer and receipt import broke across the stack. Both suites
 /// stayed green, because each side was correct about its own definition; the
 /// defect lived in the agreement between them.
@@ -161,11 +161,12 @@ mod gate_receipt_tests {
 
     #[test]
     fn a_field_outside_the_content_list_does_not_change_the_digest() {
-        // The incident this exists to prevent: Toimija attached a sauma
-        // envelope, and every consumer recomputing by exclusion disagreed.
+        // The incident this exists to prevent: a producer attached a
+        // verifier's envelope, and every consumer recomputing by exclusion
+        // disagreed.
         let bare = gate_receipt_digest(&receipt()).unwrap();
         let mut sealed = receipt();
-        sealed["sauma"] = json!({"envelope": "sauma-envelope.v1", "digest": "sha256:x"});
+        sealed["verifier"] = json!({"envelope": "verifier-envelope.v1", "digest": "sha256:x"});
         sealed["some_future_field"] = json!(42);
         assert_eq!(gate_receipt_digest(&sealed).unwrap(), bare);
     }

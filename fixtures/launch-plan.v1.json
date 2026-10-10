@@ -1,5 +1,5 @@
 {
-  "program": "kisko",
+  "program": "fixture-worker",
   "args": [],
   "env": [
     {

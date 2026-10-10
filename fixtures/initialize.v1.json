@@ -1,6 +1,6 @@
 {
   "host": {
-    "name": "toimija",
+    "name": "fixture-host",
     "version": "0.1.1"
   },
   "protocol": {
