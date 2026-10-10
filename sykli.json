@@ -1,0 +1,83 @@
+{
+  "schema": "sykli-contract.v1",
+  "tasks": [
+    {
+      "name": "fmt",
+      "run": "cargo fmt --check",
+      "inputs": [
+        "Cargo.lock",
+        "Cargo.toml",
+        "src/context.rs",
+        "src/digest.rs",
+        "src/envelope.rs",
+        "src/error.rs",
+        "src/framing.rs",
+        "src/id.rs",
+        "src/lib.rs",
+        "src/plugin.rs",
+        "src/semantic.rs",
+        "src/work.rs",
+        "src/worker.rs",
+        "tests/fixtures.rs"
+      ]
+    },
+    {
+      "name": "clippy",
+      "run": "cargo clippy --workspace --all-targets -- -D warnings",
+      "after": [
+        "fmt"
+      ],
+      "inputs": [
+        "Cargo.lock",
+        "Cargo.toml",
+        "fixtures/execution-context.v1.json",
+        "fixtures/initialize.v1.json",
+        "fixtures/launch-plan.v1.json",
+        "fixtures/unbound-context.v1.json",
+        "fixtures/work-packet.v1.json",
+        "fixtures/worker-result.v1.json",
+        "src/context.rs",
+        "src/digest.rs",
+        "src/envelope.rs",
+        "src/error.rs",
+        "src/framing.rs",
+        "src/id.rs",
+        "src/lib.rs",
+        "src/plugin.rs",
+        "src/semantic.rs",
+        "src/work.rs",
+        "src/worker.rs",
+        "tests/fixtures.rs"
+      ]
+    },
+    {
+      "name": "test",
+      "run": "cargo test --workspace",
+      "after": [
+        "fmt"
+      ],
+      "inputs": [
+        "Cargo.lock",
+        "Cargo.toml",
+        "fixtures/execution-context.v1.json",
+        "fixtures/initialize.v1.json",
+        "fixtures/launch-plan.v1.json",
+        "fixtures/unbound-context.v1.json",
+        "fixtures/work-packet.v1.json",
+        "fixtures/worker-result.v1.json",
+        "src/context.rs",
+        "src/digest.rs",
+        "src/envelope.rs",
+        "src/error.rs",
+        "src/framing.rs",
+        "src/id.rs",
+        "src/lib.rs",
+        "src/plugin.rs",
+        "src/semantic.rs",
+        "src/work.rs",
+        "src/worker.rs",
+        "tests/fixtures.rs"
+      ]
+    }
+  ]
+}
