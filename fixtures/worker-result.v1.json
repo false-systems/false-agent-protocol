@@ -29,7 +29,7 @@
   ],
   "claimed_completion": "validated",
   "unresolved_blockers": [],
-  "transcript_ref": ".toimija/runs/run_fixture.jsonl",
-  "result_digest": "sha256:861bc98b92669fd807d8da6acf3868cfd91cd496a420a1df367d6f13e77e947c",
+  "transcript_ref": "runs/run_fixture.jsonl",
+  "result_digest": "sha256:1e93cf7fff914b19830c7154ebf52d28027f3620a86d9e27a89bf7be3a28d5b7",
   "extensions": {}
 }

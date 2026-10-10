@@ -17,5 +17,5 @@ fn runtime_fixtures_are_compatible() {
     assert!(context.work.is_none());
 
     let plan: LaunchPlan = serde_json::from_str(LAUNCH_PLAN_FIXTURE).unwrap();
-    assert_eq!(plan.program, "kisko");
+    assert_eq!(plan.program, "fixture-worker");
 }

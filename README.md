@@ -3,8 +3,10 @@
 `false-agent-protocol` is the small wire contract connecting independently
 built False Systems products:
 
-- Teko owns specifications, work, obligations, gates, receipts, and closure.
-- Toimija owns current repository points and repository capabilities.
+- A work-contract tool owns specifications, work, obligations, gates,
+  receipts, and closure.
+- A repository-facts tool owns current repository points and repository
+  capabilities.
 - A `worker.v1` producer owns its runs, actions, tool outcomes, transcripts,
   and run evidence; the protocol does not choose that producer.
 
