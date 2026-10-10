@@ -24,3 +24,10 @@ false-agent-protocol = { version = "0.1.3", git = "https://github.com/false-syst
 cargo build
 cargo test
 ```
+
+The checks (fmt, clippy, test) are declared in `sykli.json`. The gate runs
+them and checks the receipt:
+
+```bash
+mkdir -p .sykli && sykli run sykli.json --json > .sykli/receipt.json && sykli verify .sykli/receipt.json --contract sykli.json
+```
